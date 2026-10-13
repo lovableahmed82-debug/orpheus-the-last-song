@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#100d17">
+  <meta name="description" content="ORPHEUS: THE LAST SONG — A cinematic journey through love, loss, and the Greek underworld.">
+  <title>ORPHEUS: THE LAST SONG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main id="game" class="game-shell">
+
+    <!-- Opening screen -->
+    <section id="title-screen" class="screen title-screen" aria-label="Title screen">
+      <div class="title-atmosphere" aria-hidden="true"></div>
+
+      <div class="title-content">
+        <p class="eyebrow">A GREEK MYTHOLOGICAL TALE</p>
+
+        <h1 class="game-title">
+          <span>ORPHEUS</span>
+          <span class="title-divider">—</span>
+          <span class="title-subtitle">THE LAST SONG</span>
+        </h1>
+
+        <p class="title-quote">
+          “Some songs are powerful enough to move the gods.
+          But can they conquer death?”
+        </p>
+
+        <button id="start-button" class="primary-button" type="button">
+          <span>Begin the journey</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+
+        <p class="title-footer">LOVE · LOSS · THE UNDERWORLD</p>
+      </div>
+    </section>
+
+    <!-- Main story screen -->
+    <section id="story-screen" class="screen story-screen" hidden>
+      <header class="game-header">
+        <div class="header-brand">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>ORPHEUS</span>
+        </div>
+
+        <div class="chapter-indicator">
+          <span id="chapter-number">PROLOGUE</span>
+          <span class="chapter-line" aria-hidden="true"></span>
+        </div>
+
+        <button
+          id="menu-button"
+          class="icon-button"
+          type="button"
+          aria-label="Open game menu"
+          title="Menu"
+        >☰</button>
+      </header>
+
+      <div id="scene-viewport" class="scene-viewport">
+        <!-- Scene backgrounds and character sprites will be added later. -->
+        <div id="scene-background" class="scene-background"></div>
+        <div class="scene-vignette" aria-hidden="true"></div>
+
+        <div id="scene-light" class="scene-light" aria-hidden="true"></div>
+
+        <div id="character-stage" class="character-stage">
+          <div id="eurydice-sprite" class="character character-eurydice" hidden>
+            <img
+              id="eurydice-image"
+              class="character-image"
+              src=""
+              alt="Eurydice"
+            >
+          </div>
+
+          <div id="orpheus-sprite" class="character character-orpheus" hidden>
+            <img
+              id="orpheus-image"
+              class="character-image"
+              src=""
+              alt="Orpheus"
+            >
+          </div>
+        </div>
+
+        <div id="scene-caption" class="scene-caption" aria-live="polite"></div>
+
+        <div id="scene-transition" class="scene-transition" aria-hidden="true"></div>
+      </div>
+
+      <!-- Dialogue and decisions -->
+      <section id="dialogue-panel" class="dialogue-panel" aria-label="Story dialogue">
+        <div class="dialogue-heading">
+          <div id="speaker-portrait" class="speaker-portrait" aria-hidden="true">
+            <img id="speaker-image" src="" alt="">
+            <span id="portrait-placeholder">✦</span>
+          </div>
+
+          <div class="speaker-details">
+            <p id="speaker-role" class="speaker-role">THE STORYTELLER</p>
+            <h2 id="speaker-name" class="speaker-name">A voice beyond time</h2>
+          </div>
+
+          <span id="emotion-indicator" class="emotion-indicator" aria-hidden="true"></span>
+        </div>
+
+        <div class="dialogue-body">
+          <p id="dialogue-text" class="dialogue-text" aria-live="polite">
+            Every legend begins with a song.
+          </p>
+        </div>
+
+        <div id="choice-container" class="choice-container"></div>
+
+        <div class="dialogue-controls">
+          <span id="progress-label" class="progress-label">THE BEGINNING</span>
+
+          <button id="continue-button" class="continue-button" type="button">
+            Continue <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Menu overlay -->
+      <div id="menu-overlay" class="menu-overlay" hidden>
+        <div class="menu-card" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+          <p class="eyebrow">THE JOURNEY</p>
+          <h2 id="menu-title">Pause</h2>
+
+          <button id="resume-button" class="menu-option" type="button">
+            Return to the story
+          </button>
+
+          <button id="restart-button" class="menu-option" type="button">
+            Begin again
+          </button>
+
+          <button id="close-menu-button" class="menu-option menu-option-muted" type="button">
+            Close
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ending screen -->
+    <section id="ending-screen" class="screen ending-screen" hidden>
+      <div class="ending-atmosphere" aria-hidden="true"></div>
+
+      <div class="ending-content">
+        <p class="eyebrow">THE FINAL VERSE</p>
+        <div id="ending-symbol" class="ending-symbol" aria-hidden="true">✦</div>
+        <h2 id="ending-title" class="ending-title">The Last Song</h2>
+        <p id="ending-description" class="ending-description"></p>
+
+        <div class="ending-divider" aria-hidden="true"></div>
+
+        <p class="ending-note">
+          Every choice leaves an echo.
+          Every love becomes a legend.
+        </p>
+
+        <button id="play-again-button" class="primary-button" type="button">
+          <span>Return to the beginning</span>
+          <span class="button-arrow" aria-hidden="true">↻</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Audio controls and global feedback -->
+    <div id="game-notice" class="game-notice" role="status" aria-live="polite"></div>
+
+    <audio id="music-player" preload="none" loop></audio>
+    <audio id="sound-player" preload="none"></audio>
+
+  </main>
+
+  <script src="story.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
