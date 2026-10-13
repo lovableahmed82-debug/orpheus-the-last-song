@@ -1,0 +1,797 @@
+
+/*
+ * ORPHEUS: THE LAST SONG
+ * Story data: dialogue, choices, chapters, and endings.
+ *
+ * The game engine in game.js reads this file.
+ */
+
+window.ORPHEUS_STORY = {
+  start: "opening_01",
+
+  chapters: {
+    prologue: "PROLOGUE",
+    love: "A SONG OF SPRING",
+    tragedy: "THE SILENCE",
+    olympus: "A PRAYER TO THE GODS",
+    descent: "THE DESCENT",
+    styx: "THE RIVER STYX",
+    cerberus: "THE THREE-HEADED GUARDIAN",
+    hades: "THE THRONE OF THE DEAD",
+    return: "THE ROAD TO DAYLIGHT",
+    doubt: "THE FINAL TEST"
+  },
+
+  scenes: {
+    opening_01: {
+      chapter: "prologue",
+      background: "mountain",
+      speaker: "narrator",
+      emotion: "mysterious",
+      caption: "Greece, in an age when the gods still listened.",
+      text:
+        "Before the world forgot the names of its heroes, there lived a musician whose songs could quiet storms and soften the hearts of beasts.",
+      next: "opening_02"
+    },
+
+    opening_02: {
+      chapter: "prologue",
+      background: "mountain",
+      speaker: "narrator",
+      emotion: "gentle",
+      caption: "A melody carried across the hills.",
+      text:
+        "His name was Orpheus. Apollo had blessed his music, and the Muses had taught his hands to draw impossible beauty from the lyre. Yet the greatest song of his life had not been written.",
+      next: "opening_03"
+    },
+
+    opening_03: {
+      chapter: "prologue",
+      background: "forest",
+      speaker: "narrator",
+      emotion: "warm",
+      caption: "Among the trees, another soul listened.",
+      text:
+        "Then he met Eurydice. She did not love him because he could charm the world. She loved the quiet man who appeared when the music ended.",
+      next: "love_01"
+    },
+
+    love_01: {
+      chapter: "love",
+      background: "meadow",
+      speaker: "eurydice",
+      emotion: "happy",
+      caption: "A golden afternoon in the meadow.",
+      text:
+        "You always look so serious when you play. Tell me, Orpheus… does every song you write have to sound like the end of the world?",
+      choices: [
+        {
+          text: "Not every song. Some are about you.",
+          next: "love_02",
+          effects: { affection: 2 }
+        },
+        {
+          text: "Only the ones I want you to hear.",
+          next: "love_03",
+          effects: { affection: 1, courage: 1 }
+        }
+      ]
+    },
+
+    love_02: {
+      chapter: "love",
+      background: "meadow",
+      speaker: "orpheus",
+      emotion: "tender",
+      caption: "He lowers his lyre and smiles.",
+      text:
+        "Then I must be the luckiest musician alive. The world gives me a thousand melodies, but you give them meaning.",
+      next: "love_04"
+    },
+
+    love_03: {
+      chapter: "love",
+      background: "meadow",
+      speaker: "eurydice",
+      emotion: "amused",
+      caption: "Her laughter drifts through the grass.",
+      text:
+        "A dangerous answer. One day I shall ask you to play something cheerful, and then we will discover whether you are capable of it.",
+      next: "love_04"
+    },
+
+    love_04: {
+      chapter: "love",
+      background: "meadow",
+      speaker: "narrator",
+      emotion: "nostalgic",
+      caption: "Two shadows beneath an ancient olive tree.",
+      text:
+        "They spoke of the life they would build together: a modest home, a garden, and evenings filled with music. Orpheus believed that if he loved her enough, the world would leave her untouched.",
+      next: "love_05"
+    },
+
+    love_05: {
+      chapter: "love",
+      background: "forest",
+      speaker: "eurydice",
+      emotion: "thoughtful",
+      caption: "The light begins to fade.",
+      text:
+        "Promise me something. If the day ever comes when you cannot find me, do not let sorrow turn every song into a funeral.",
+      choices: [
+        {
+          text: "I promise. I will keep singing.",
+          next: "love_06",
+          effects: { courage: 2, affection: 1 }
+        },
+        {
+          text: "I cannot imagine a world without you.",
+          next: "love_07",
+          effects: { affection: 2, fear: 1 }
+        }
+      ]
+    },
+
+    love_06: {
+      chapter: "love",
+      background: "forest",
+      speaker: "eurydice",
+      emotion: "loving",
+      caption: "She takes his hand.",
+      text:
+        "Then remember this moment when the darkness comes. Remember that we were happy, and that happiness was real.",
+      next: "tragedy_01"
+    },
+
+    love_07: {
+      chapter: "love",
+      background: "forest",
+      speaker: "eurydice",
+      emotion: "loving",
+      caption: "She rests her forehead against his.",
+      text:
+        "You do not have to imagine it. Just stay here with me, while the sun is still warm and the world is still ours.",
+      next: "tragedy_01"
+    },
+
+    tragedy_01: {
+      chapter: "tragedy",
+      background: "forest_dusk",
+      speaker: "narrator",
+      emotion: "ominous",
+      caption: "The meadow falls silent.",
+      text:
+        "Days later, Eurydice walked through the grass at the edge of the forest. A serpent hidden beneath the leaves struck before she could see it.",
+      next: "tragedy_02"
+    },
+
+    tragedy_02: {
+      chapter: "tragedy",
+      background: "forest_dusk",
+      speaker: "eurydice",
+      emotion: "afraid",
+      caption: "She reaches for him.",
+      text:
+        "Orpheus…",
+      next: "tragedy_03"
+    },
+
+    tragedy_03: {
+      chapter: "tragedy",
+      background: "forest_dusk",
+      speaker: "orpheus",
+      emotion: "desperate",
+      caption: "The lyre slips from his hands.",
+      text:
+        "No. No, look at me. Stay with me! I can call a healer. I can find a god. Just do not close your eyes.",
+      next: "tragedy_04"
+    },
+
+    tragedy_04: {
+      chapter: "tragedy",
+      background: "forest_dusk",
+      speaker: "narrator",
+      emotion: "grief",
+      caption: "The last light leaves the forest.",
+      text:
+        "But no song could call her back. The woman who had filled his world with meaning was gone, and every sound around him became unbearable.",
+      next: "tragedy_05"
+    },
+
+    tragedy_05: {
+      chapter: "tragedy",
+      background: "mourning",
+      speaker: "orpheus",
+      emotion: "broken",
+      caption: "A solitary figure beneath a dark sky.",
+      text:
+        "If the living world cannot return you to me, I will go where the living are forbidden to go. I will sing before the throne of death itself.",
+      next: "olympus_01"
+    },
+
+    olympus_01: {
+      chapter: "olympus",
+      background: "temple",
+      speaker: "narrator",
+      emotion: "solemn",
+      caption: "At the altar of the gods.",
+      text:
+        "Orpheus climbed the sacred steps and raised his voice to Olympus. He asked Zeus, king of the gods, for a mercy no mortal had ever demanded.",
+      next: "olympus_02"
+    },
+
+    olympus_02: {
+      chapter: "olympus",
+      background: "temple",
+      speaker: "orpheus",
+      emotion: "pleading",
+      caption: "His fingers tremble over the strings.",
+      text:
+        "Zeus, lord of the sky, hear me. I do not ask for immortality or a kingdom. Let me descend to the dead and plead for the soul I love.",
+      choices: [
+        {
+          text: "Play a song of humility and grief.",
+          next: "olympus_03",
+          effects: { humility: 2, courage: 1 }
+        },
+        {
+          text: "Play a bold song that challenges fate.",
+          next: "olympus_04",
+          effects: { courage: 2, pride: 1 }
+        }
+      ]
+    },
+
+    olympus_03: {
+      chapter: "olympus",
+      background: "temple",
+      speaker: "narrator",
+      emotion: "reverent",
+      caption: "The temple listens.",
+      text:
+        "His music did not command the heavens. It asked them to remember compassion. The wind quieted, and for a moment even the sacred fire seemed to listen.",
+      next: "olympus_05"
+    },
+
+    olympus_04: {
+      chapter: "olympus",
+      background: "temple",
+      speaker: "narrator",
+      emotion: "defiant",
+      caption: "The strings ring like a challenge.",
+      text:
+        "His music rose like a storm against the stars. It was beautiful, but pride and desperation burned beneath every note. The heavens gave no answer.",
+      next: "olympus_05"
+    },
+
+    olympus_05: {
+      chapter: "olympus",
+      background: "temple",
+      speaker: "narrator",
+      emotion: "solemn",
+      caption: "A final ray crosses the altar.",
+      text:
+        "No god promised him success. No divine voice opened the gates of death. Orpheus rose with only his lyre, his grief, and the knowledge that he might never return.",
+      next: "descent_01"
+    },
+
+    descent_01: {
+      chapter: "descent",
+      background: "cavern",
+      speaker: "narrator",
+      emotion: "ominous",
+      caption: "The entrance to the realm below.",
+      text:
+        "He found a passage beneath the earth, where the air grew cold and the daylight narrowed to a distant memory. He crossed the threshold alive.",
+      next: "descent_02"
+    },
+
+    descent_02: {
+      chapter: "descent",
+      background: "cavern",
+      speaker: "orpheus",
+      emotion: "resolute",
+      caption: "He tightens his grip on the lyre.",
+      text:
+        "I am afraid. I will not pretend otherwise. But fear is not enough to turn me back.",
+      next: "styx_01"
+    },
+
+    styx_01: {
+      chapter: "styx",
+      background: "styx",
+      speaker: "narrator",
+      emotion: "somber",
+      caption: "The black river has no visible shore.",
+      text:
+        "At the River Styx, the boundary between life and death, the souls of the departed waited in silence. Their only passage was a boat guided by Charon, the ferryman.",
+      next: "styx_02"
+    },
+
+    styx_02: {
+      chapter: "styx",
+      background: "styx",
+      speaker: "charon",
+      emotion: "cold",
+      caption: "The ferryman turns toward the living man.",
+      text:
+        "You have a heartbeat. I can hear it. The dead do not pay for passage with promises, musician. Why should I carry you?",
+      choices: [
+        {
+          text: "Offer a song for the forgotten dead.",
+          next: "styx_03",
+          effects: { humility: 2, compassion: 2 }
+        },
+        {
+          text: "Insist that love gives you the right to cross.",
+          next: "styx_04",
+          effects: { courage: 1, pride: 2 }
+        }
+      ]
+    },
+
+    styx_03: {
+      chapter: "styx",
+      background: "styx",
+      speaker: "narrator",
+      emotion: "moved",
+      caption: "The boat drifts closer.",
+      text:
+        "Orpheus played for the nameless souls who had waited too long to be remembered. Charon lowered his gaze. Without a word, he offered his hand.",
+      next: "styx_05"
+    },
+
+    styx_04: {
+      chapter: "styx",
+      background: "styx",
+      speaker: "charon",
+      emotion: "stern",
+      caption: "The ferryman studies the living.",
+      text:
+        "Love may bring you here, mortal. It does not make you master of this river. Play, then. Let me hear whether your heart speaks louder than your pride.",
+      next: "styx_06"
+    },
+
+    styx_05: {
+      chapter: "styx",
+      background: "styx",
+      speaker: "orpheus",
+      emotion: "grateful",
+      caption: "The boat enters the mist.",
+      text:
+        "Thank you. I will remember the souls who crossed with us, even if the world above never knows their names.",
+      next: "cerberus_01"
+    },
+
+    styx_06: {
+      chapter: "styx",
+      background: "styx",
+      speaker: "orpheus",
+      emotion: "determined",
+      caption: "A slow melody crosses the dark water.",
+      text:
+        "Listen, then. This song is not a command. It is the sound of a man who has lost everything except the reason he came.",
+      next: "cerberus_01"
+    },
+
+    cerberus_01: {
+      chapter: "cerberus",
+      background: "gates",
+      speaker: "narrator",
+      emotion: "tense",
+      caption: "The gates of the underworld rise from the dark.",
+      text:
+        "Beyond the river stood the gates of Hades. Before them crouched Cerberus, the three-headed guardian who allowed the dead to enter and forbade them to leave.",
+      next: "cerberus_02"
+    },
+
+    cerberus_02: {
+      chapter: "cerberus",
+      background: "gates",
+      speaker: "narrator",
+      emotion: "fear",
+      caption: "Three sets of eyes fix upon the musician.",
+      text:
+        "The beast's claws scraped the stone. Its three throats rumbled, and the sound shook dust from the ancient gates.",
+      next: "cerberus_03"
+    },
+
+    cerberus_03: {
+      chapter: "cerberus",
+      background: "gates",
+      speaker: "orpheus",
+      emotion: "careful",
+      caption: "Orpheus slowly raises his lyre.",
+      text:
+        "I will not fight you. You guard this place, as I guard the memory of the woman I love. Let me pass, and I will leave you in peace.",
+      choices: [
+        {
+          text: "Play a gentle lullaby.",
+          next: "cerberus_04",
+          effects: { compassion: 2, humility: 1 }
+        },
+        {
+          text: "Play a powerful melody to command attention.",
+          next: "cerberus_05",
+          effects: { courage: 2, pride: 1 }
+        }
+      ]
+    },
+
+    cerberus_04: {
+      chapter: "cerberus",
+      background: "gates",
+      speaker: "narrator",
+      emotion: "wonder",
+      caption: "The growling slowly fades.",
+      text:
+        "The melody moved through the beast like warm air through a winter cave. One head lowered. Then the second. At last, all three rested upon their paws, and the path opened.",
+      next: "hades_01"
+    },
+
+    cerberus_05: {
+      chapter: "cerberus",
+      background: "gates",
+      speaker: "narrator",
+      emotion: "awe",
+      caption: "The sound echoes through the gates.",
+      text:
+        "Orpheus played with such force that the stone itself seemed to vibrate. Cerberus recoiled, then fell silent. The beast did not love him, but it allowed him through.",
+      next: "hades_01"
+    },
+
+    hades_01: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "narrator",
+      emotion: "solemn",
+      caption: "The palace of the underworld.",
+      text:
+        "At last, Orpheus stood before Hades, lord of the dead, and Persephone, queen beside him. Their throne was surrounded by the silent multitudes of those who could never return.",
+      next: "hades_02"
+    },
+
+    hades_02: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "hades",
+      emotion: "stern",
+      caption: "The lord of the dead speaks.",
+      text:
+        "You have crossed the river of the dead while still breathing. You have passed my guardian. Tell me, musician: what could the living possibly offer that death does not already possess?",
+      next: "hades_03"
+    },
+
+    hades_03: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "orpheus",
+      emotion: "heartbroken",
+      caption: "He looks down at his lyre.",
+      text:
+        "Nothing. I have no treasure worthy of your throne. I have only this song, and the truth that I loved Eurydice before the world took her from me.",
+      next: "hades_04"
+    },
+
+    hades_04: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "narrator",
+      emotion: "emotional",
+      caption: "Even the dead remember how to weep.",
+      text:
+        "Orpheus began to play. He sang of their first meeting, of her laughter beneath the olive tree, and of the promise he could no longer keep. The dead remembered the warmth of life. Persephone lowered her eyes.",
+      next: "hades_05"
+    },
+
+    hades_05: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "persephone",
+      emotion: "compassionate",
+      caption: "The queen turns toward her husband.",
+      text:
+        "My lord, hear what this mortal asks. He has not come seeking power over death. He has come because his life without her has become a place he cannot bear to inhabit.",
+      next: "hades_06"
+    },
+
+    hades_06: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "hades",
+      emotion: "conflicted",
+      caption: "The throne room falls utterly silent.",
+      text:
+        "Your music has reached places where even the cries of the dead cannot travel. I will grant your request, Orpheus, but the road back belongs to the darkness.",
+      next: "hades_07"
+    },
+
+    hades_07: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "hades",
+      emotion: "warning",
+      caption: "A pale light appears behind the throne.",
+      text:
+        "Eurydice will follow you toward the world above. You must walk before her. Do not turn around to look at her until both of you have reached the sunlight. If you look back before then, she will return to my kingdom, and no song will bring her back again.",
+      next: "hades_08"
+    },
+
+    hades_08: {
+      chapter: "hades",
+      background: "throne",
+      speaker: "orpheus",
+      emotion: "hopeful",
+      caption: "He dares to breathe again.",
+      text:
+        "I understand. I will trust the sound of her footsteps. I will keep walking, even when I cannot see her.",
+      next: "return_01"
+    },
+
+    return_01: {
+      chapter: "return",
+      background: "underworld_path",
+      speaker: "narrator",
+      emotion: "hopeful",
+      caption: "Two souls begin the ascent.",
+      text:
+        "Behind Orpheus, Eurydice stepped out of the shadows. She could see his back, his lyre, and the path toward the distant light. He could not see her face.",
+      next: "return_02"
+    },
+
+    return_02: {
+      chapter: "return",
+      background: "underworld_path",
+      speaker: "eurydice",
+      emotion: "soft",
+      caption: "Her footsteps are faint behind him.",
+      text:
+        "Orpheus… I am here. Keep going. Do not let the silence frighten you.",
+      next: "return_03"
+    },
+
+    return_03: {
+      chapter: "return",
+      background: "underworld_path",
+      speaker: "orpheus",
+      emotion: "strained",
+      caption: "He walks without looking back.",
+      text:
+        "I hear you. I will not turn. Just keep speaking to me. Let your voice be the thread that leads me home.",
+      next: "doubt_01"
+    },
+
+    doubt_01: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "narrator",
+      emotion: "tense",
+      caption: "The distant light grows brighter.",
+      text:
+        "The road climbed through stone and shadow. Orpheus heard the wind ahead, but behind him there was only the faint rhythm of footsteps. Were they hers? Was she still there? The darkness offered no answer.",
+      next: "doubt_02"
+    },
+
+    doubt_02: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "eurydice",
+      emotion: "worried",
+      caption: "Her voice trembles in the dark.",
+      text:
+        "My love, I am growing tired. Tell me that you still hear me.",
+      choices: [
+        {
+          text: "Keep walking. Trust her voice and the promise.",
+          next: "doubt_03",
+          effects: { courage: 2, trust: 2 }
+        },
+        {
+          text: "Call her name and wait for her answer.",
+          next: "doubt_04",
+          effects: { trust: 1, fear: 1 }
+        },
+        {
+          text: "Turn around. You cannot endure the uncertainty.",
+          next: "ending_original",
+          effects: { fear: 3, trust: -2 }
+        }
+      ]
+    },
+
+    doubt_03: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "orpheus",
+      emotion: "determined",
+      caption: "He forces himself toward the light.",
+      text:
+        "I hear you. I trust you. One more step, and then another. We have come too far to let fear decide our fate.",
+      next: "doubt_05"
+    },
+
+    doubt_04: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "eurydice",
+      emotion: "reassuring",
+      caption: "Her voice answers from behind him.",
+      text:
+        "I am here. I have not left you. Please, my love, keep walking. The light is so close.",
+      next: "doubt_05"
+    },
+
+    doubt_05: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "narrator",
+      emotion: "suspense",
+      caption: "The first breath of the upper world.",
+      text:
+        "The air changed. He could smell rain on earth, feel warmth upon his face, and hear the wind stirring living leaves. The exit was just ahead. Yet the final steps felt longer than the whole journey below.",
+      next: "doubt_06"
+    },
+
+    doubt_06: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "orpheus",
+      emotion: "afraid",
+      caption: "He stops at the edge of the light.",
+      text:
+        "Eurydice? If you can hear me, give me one sign. A word. A breath. Anything.",
+      choices: [
+        {
+          text: "Trust the promise until both reach the sunlight.",
+          next: "ending_together",
+          condition: "trusting_path"
+        },
+        {
+          text: "Turn back one final time to be certain.",
+          next: "ending_original"
+        },
+        {
+          text: "Offer your place among the living for hers.",
+          next: "ending_sacrifice",
+          condition: "sacrifice_path"
+        }
+      ]
+    },
+
+    ending_original: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "narrator",
+      emotion: "tragic",
+      caption: "The light is almost within reach.",
+      text:
+        "Orpheus turned. For one terrible instant, he saw Eurydice reaching toward him, her face filled with love and sorrow. Then the darkness claimed her again.",
+      ending: "original",
+      endingTitle: "The Myth of Orpheus",
+      endingDescription:
+        "He had crossed the river of the dead, softened the heart of its guardian, and moved the rulers of the underworld. Yet at the final threshold, fear defeated his faith.\n\nEurydice faded into the shadows, and his last song followed her where he could not go."
+    },
+
+    ending_together: {
+      chapter: "doubt",
+      background: "sunrise",
+      speaker: "narrator",
+      emotion: "triumphant",
+      caption: "The world of the living opens before them.",
+      text:
+        "Orpheus took one more step. Then another. The sunlight touched his face, and only when he stood fully beneath the open sky did he turn.",
+      next: "ending_together_02"
+    },
+
+    ending_together_02: {
+      chapter: "doubt",
+      background: "sunrise",
+      speaker: "eurydice",
+      emotion: "overwhelmed",
+      caption: "She steps into the sunlight beside him.",
+      text:
+        "You waited. You trusted me. We are here, Orpheus. We are finally here.",
+      next: "ending_together_03"
+    },
+
+    ending_together_03: {
+      chapter: "doubt",
+      background: "sunrise",
+      speaker: "orpheus",
+      emotion: "joyful",
+      caption: "He takes both her hands.",
+      text:
+        "I heard every step. Even when I was afraid, I chose to believe that you were beside me.",
+      ending: "together",
+      endingTitle: "A Song Beyond Death",
+      endingDescription:
+        "Their hands met beneath the morning sky. For the first time since her death, Orpheus played a song without grief.\n\nThe gods had set a cruel test, but love and trust carried them through it. Together, they returned to the world of the living."
+    },
+
+    ending_sacrifice: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "orpheus",
+      emotion: "resolute",
+      caption: "He faces the light, then the darkness behind him.",
+      text:
+        "If one of us must remain, let it be me. I have lived in the light. Let her have another morning.",
+      next: "ending_sacrifice_02"
+    },
+
+    ending_sacrifice_02: {
+      chapter: "doubt",
+      background: "underworld_path",
+      speaker: "narrator",
+      emotion: "solemn",
+      caption: "A final melody rises from the shadows.",
+      text:
+        "He laid his lyre upon the stone and spoke his choice to the powers below. His life would be the price of her return. For a long moment, nothing moved.",
+      next: "ending_sacrifice_03"
+    },
+
+    ending_sacrifice_03: {
+      chapter: "doubt",
+      background: "sunrise",
+      speaker: "eurydice",
+      emotion: "heartbroken",
+      caption: "She reaches the living world alone.",
+      text:
+        "She emerged into the morning and turned toward the darkness. His song followed her for a moment, growing softer with every breath, until the world above fell silent.",
+      ending: "sacrifice",
+      endingTitle: "The Price of Love",
+      endingDescription:
+        "Eurydice returned to the living world, but Orpheus remained below. His final act was not to conquer death, but to give the future he wanted to the woman he loved.\n\nShe would carry his music in her memory, and his last song would never truly end."
+    }
+  },
+
+  /*
+   * Character display names and portrait metadata.
+   * Image files will be connected in a later stage.
+   */
+  characters: {
+    narrator: {
+      name: "The Storyteller",
+      role: "VOICE OF LEGEND",
+      portrait: "",
+      emotion: "mysterious"
+    },
+    orpheus: {
+      name: "Orpheus",
+      role: "THE MUSICIAN",
+      portrait: "",
+      emotion: "determined"
+    },
+    eurydice: {
+      name: "Eurydice",
+      role: "THE BELOVED",
+      portrait: "",
+      emotion: "gentle"
+    },
+    charon: {
+      name: "Charon",
+      role: "FERRYMAN OF THE DEAD",
+      portrait: "",
+      emotion: "stern"
+    },
+    hades: {
+      name: "Hades",
+      role: "LORD OF THE UNDERWORLD",
+      portrait: "",
+      emotion: "stern"
+    },
+    persephone: {
+      name: "Persephone",
+      role: "QUEEN OF THE UNDERWORLD",
+      portrait: "",
+      emotion: "compassionate"
+    }
+  },
+
+  endings: {
+    original: "ending_original",
+    together: "ending_together_03",
+    sacrifice: "ending_sacrifice_03"
+  }
+};
